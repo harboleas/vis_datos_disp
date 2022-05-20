@@ -16,7 +16,7 @@ enum Estados {
     VERIF_ERROR};
 
 Estados estado = SYNC1;
-byte dato;
+byte dato, verif;
 
 union {
     unsigned int val;
@@ -36,7 +36,7 @@ void setup()
     lcd.clear();
 
     lcd.setCursor(0, 0);
-    lcd.print("Vel    : 0   m/s");
+    lcd.print("Vel    :   0 m/s");
     lcd.setCursor(0, 1);
     lcd.print("Disparos : 0    ");
  
@@ -44,6 +44,13 @@ void setup()
 
 void loop() 
 {
+
+    bool error_com;
+    bool actualizar_display;
+    
+    error_com = false;
+    actualizar_display = false;
+
 
     // Lectura del puerto serie
     dato = Serial.read();
@@ -79,23 +86,51 @@ void loop()
             break;
 
         case DISP1:
-            velocidad.D[1] = dato;
+            cantidad.D[1] = dato;
             estado = VERIF_ERROR;
             break;
 
-        case DISP1:
-            velocidad.D[1] = dato;
+        case VERIF_ERROR: 
+            actualizar_display = true;
+            verif = velocidad.D[0] + velocidad.D[1] + cantidad.D[0] + cantidad.D[1];
+            if (verif == 0xFF)
+                verif = 0xFE;
+
+            if (verif != dato)
+                error_com = true;
             estado = SYNC1;
             break;
+
         default:
+            estado = SYNC1;
+            break;
 
     }
 
+    if (actualizar_display)
+    {
 
+        if (error_com)
+        {
+            lcd.clear();
+            lcd.setCursor(0, 0);
+            lcd.print("Error comunicion");
+        }
 
-  lcd.setCursor(0, 0);
-  lcd.print("Vel    :");
-  lcd.setCursor(0, 1);
-  lcd.print("Disparos :");
-  
+        else
+        {
+            lcd.clear();
+            lcd.setCursor(0, 0);
+            lcd.print("Vel    : ");
+            lcd.print(velocidad.val);
+            lcd.print(" m/s");
+            lcd.setCursor(0, 1);
+            lcd.print("Disparos : ");
+            lcd.print(cantidad.val);
+        }
+    }
+
 }
+
+
+/* vim: set ts=4 sw=4 tw=79 et :*/
