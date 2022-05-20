@@ -53,6 +53,7 @@ void loop()
 
 
     // Lectura del puerto serie
+    while(!Serial.available());   // Espera hasta q haya datos
     dato = Serial.read();
 
     // FSM para la decodificacion de la trama
@@ -114,7 +115,7 @@ void loop()
         {
             lcd.clear();
             lcd.setCursor(0, 0);
-            lcd.print("Error comunicion");
+            lcd.print("Error Comunicaion");
         }
 
         else
