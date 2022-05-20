@@ -1,0 +1,26 @@
+﻿<Properties StartupConfiguration="{5D34EB85-A7B1-447B-B7B5-109598E3EF1C}|Default">
+  <MonoDevelop.Ide.ItemProperties.simu__datos__disp FirstBuild="True" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="simu_datos_disp/MainWindow.cs">
+    <Files>
+      <File FileName="simu_datos_disp/Program.cs" Line="1" Column="1" />
+      <File FileName="simu_datos_disp/MainWindow.cs" Line="1" Column="1" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="simu_datos_disp" expanded="True">
+            <Node name="simu_datos_disp" expanded="True">
+              <Node name="MainWindow.cs" selected="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>
