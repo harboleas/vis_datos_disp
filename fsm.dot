@@ -1,0 +1,14 @@
+digraph FSM
+{
+    SYNC1 [shape = doublecircle];
+    node [ shape = circle ];
+    SYNC1 -> SYNC2 [ label = "dato == 0xFF" ];
+    SYNC1 -> SYNC1 [ label = "dato != 0xFF" ];
+    SYNC2 -> SYNC1 [ label = "dato != 0xFF" ];
+    SYNC2 -> VEL0 [ label = "dato == 0xFF" ];
+    VEL0 -> VEL1;
+    VEL1 -> DISP0;
+    DISP0 -> DISP1;
+    DISP1 -> VERIF_ERROR;
+    VERIF_ERROR -> SYNC1; 
+}
