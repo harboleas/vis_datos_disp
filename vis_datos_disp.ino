@@ -31,14 +31,17 @@ void setup()
     // Config. del puerto serie
     Serial.begin(115200);
 
-    // Config. del LCD
+     // Config. del LCD
     lcd.begin(16, 2);
-    lcd.clear();
 
+    delay(200);
+ 
+    // Info inicial
+    lcd.clear();
     lcd.setCursor(0, 0);
-    lcd.print("Vel    :   0 m/s");
+    lcd.print("Vel: 0 m/s      ");
     lcd.setCursor(0, 1);
-    lcd.print("Disparos : 0    ");
+    lcd.print("Disparos: 0     ");
  
 }
 
@@ -114,19 +117,21 @@ void loop()
         if (error_com)
         {
             lcd.clear();
-            lcd.setCursor(0, 0);
-            lcd.print("Error Comunicaion");
+            lcd.setCursor(4, 0);
+            lcd.print("Error de");
+            lcd.setCursor(2, 1);
+            lcd.print("comunicacion");
         }
 
         else
         {
             lcd.clear();
             lcd.setCursor(0, 0);
-            lcd.print("Vel    : ");
+            lcd.print("Vel: ");
             lcd.print(velocidad.val);
             lcd.print(" m/s");
             lcd.setCursor(0, 1);
-            lcd.print("Disparos : ");
+            lcd.print("Disparos: ");
             lcd.print(cantidad.val);
         }
     }

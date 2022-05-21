@@ -6,7 +6,7 @@
   <import>
     <widget-library name="../bin/Debug/simu_datos_disp.exe" internal="true" />
   </import>
-  <widget class="Gtk.Window" id="MainWindow" design-size="604 451">
+  <widget class="Gtk.Window" id="MainWindow" design-size="596 403">
     <property name="MemberName" />
     <property name="Title" translatable="yes">Simulador de datos del disparo</property>
     <property name="WindowPosition">CenterOnParent</property>
@@ -23,6 +23,70 @@
           <packing>
             <property name="X">128</property>
             <property name="Y">101</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.Label" id="label2">
+            <property name="MemberName" />
+            <property name="LabelProp" translatable="yes">Disparos : </property>
+          </widget>
+          <packing>
+            <property name="X">130</property>
+            <property name="Y">149</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.Entry" id="vel">
+            <property name="MemberName" />
+            <property name="CanFocus">True</property>
+            <property name="Text" translatable="yes">0</property>
+            <property name="IsEditable">True</property>
+            <property name="InvisibleChar">●</property>
+          </widget>
+          <packing>
+            <property name="X">209</property>
+            <property name="Y">93</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.Entry" id="cant">
+            <property name="MemberName" />
+            <property name="CanFocus">True</property>
+            <property name="Text" translatable="yes">0</property>
+            <property name="IsEditable">True</property>
+            <property name="InvisibleChar">●</property>
+          </widget>
+          <packing>
+            <property name="X">209</property>
+            <property name="Y">140</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.CheckButton" id="button_error_com">
+            <property name="MemberName" />
+            <property name="CanFocus">True</property>
+            <property name="Label" translatable="yes">Error de comunicacion</property>
+            <property name="DrawIndicator">True</property>
+            <property name="HasLabel">True</property>
+            <property name="UseUnderline">True</property>
+          </widget>
+          <packing>
+            <property name="X">204</property>
+            <property name="Y">204</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.Button" id="button_update">
+            <property name="MemberName" />
+            <property name="CanFocus">True</property>
+            <property name="Type">TextOnly</property>
+            <property name="Label" translatable="yes">Actualizar datos</property>
+            <property name="UseUnderline">True</property>
+            <signal name="Clicked" handler="OnButtonUpdateClicked" after="yes" />
+          </widget>
+          <packing>
+            <property name="X">230</property>
+            <property name="Y">262</property>
           </packing>
         </child>
       </widget>
