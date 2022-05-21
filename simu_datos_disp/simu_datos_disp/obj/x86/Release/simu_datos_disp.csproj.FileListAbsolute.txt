@@ -1,0 +1,4 @@
+/home/nan/Proyectos/vis_datos_disp/simu_datos_disp/simu_datos_disp/bin/Release/simu_datos_disp.exe
+/home/nan/Proyectos/vis_datos_disp/simu_datos_disp/simu_datos_disp/obj/x86/Release/simu_datos_disp.csprojAssemblyReference.cache
+/home/nan/Proyectos/vis_datos_disp/simu_datos_disp/simu_datos_disp/obj/x86/Release/simu_datos_disp.csproj.CoreCompileInputs.cache
+/home/nan/Proyectos/vis_datos_disp/simu_datos_disp/simu_datos_disp/obj/x86/Release/simu_datos_disp.exe
