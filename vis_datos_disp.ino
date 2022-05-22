@@ -32,9 +32,8 @@ void setup()
     Serial.begin(115200);
 
      // Config. del LCD
+    delay(1000);
     lcd.begin(16, 2);
-
-    delay(200);
  
     // Info inicial
     lcd.clear();

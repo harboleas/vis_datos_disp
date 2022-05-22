@@ -1,7 +1,7 @@
 
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "simu_datos_disp", "simu_datos_disp\simu_datos_disp.csproj", "{5D34EB85-A7B1-447B-B7B5-109598E3EF1C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "simu_datos_disp", "simu_datos_disp.csproj", "{5D34EB85-A7B1-447B-B7B5-109598E3EF1C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -13,11 +13,5 @@ Global
 		{5D34EB85-A7B1-447B-B7B5-109598E3EF1C}.Debug|x86.Build.0 = Debug|x86
 		{5D34EB85-A7B1-447B-B7B5-109598E3EF1C}.Release|x86.ActiveCfg = Release|x86
 		{5D34EB85-A7B1-447B-B7B5-109598E3EF1C}.Release|x86.Build.0 = Release|x86
-	EndGlobalSection
-	GlobalSection(MonoDevelopProperties) = preSolution
-		Policies = $0
-		$0.DotNetNamingPolicy = $1
-		$1.DirectoryNamespaceAssociation = PrefixedHierarchical
-		$0.StandardHeader = $2
 	EndGlobalSection
 EndGlobal

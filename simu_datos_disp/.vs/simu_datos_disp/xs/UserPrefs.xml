@@ -3,13 +3,14 @@
   <MonoDevelop.Ide.Workbench ActiveDocument="simu_datos_disp/MainWindow.cs">
     <Files>
       <File FileName="simu_datos_disp/Program.cs" Line="1" Column="1" />
-      <File FileName="simu_datos_disp/MainWindow.cs" Line="40" Column="50" />
+      <File FileName="simu_datos_disp/MainWindow.cs" Line="12" Column="47" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="simu_datos_disp" expanded="True">
             <Node name="simu_datos_disp" expanded="True">
+              <Node name="UserInterface" expanded="True" />
               <Node name="MainWindow.cs" selected="True" />
             </Node>
           </Node>
