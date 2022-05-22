@@ -1,4 +1,4 @@
-Dispositivo para la visualización de datos (velocidad y cantidad) del disparo de un cañon.
+Dispositivo para visualizar los datos de velocidad y cantidad de disparos de un cañon.
 ------------------------------------------------------------------------------------------
 
 ![Disp](dispositivo.jpg)
