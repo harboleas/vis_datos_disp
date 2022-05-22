@@ -13,7 +13,7 @@ simular los errores de comunicación.
 
 ![GUI](GUI.jpg)
 
-* El desarrollo del firmware para un Arduino Nano, que permite decodificar 
+* El desarrollo del firmware para un Arduino, que permite decodificar 
 la trama y visualizar los datos en un display LCD.  
 
 
