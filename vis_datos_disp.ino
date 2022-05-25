@@ -23,6 +23,14 @@ union {
     byte D[2];
     } velocidad, cantidad;
 
+bool error_com;
+bool actualizar_display;
+ 
+// Para evitar el filckering en el display
+unsigned int vel_anterior, cant_anterior;
+bool error_anterior;
+//////////////////////////////////////////
+
 ////////////////////////////////////
 
 void setup() 
@@ -42,17 +50,13 @@ void setup()
     lcd.setCursor(0, 1);
     lcd.print("Disparos: 0     ");
  
+    error_com = false;
+    actualizar_display = false;
+    error_anterior = false;
 }
 
 void loop() 
 {
-
-    bool error_com;
-    bool actualizar_display;
-    
-    error_com = false;
-    actualizar_display = false;
-
 
     // Lectura del puerto serie
     while(!Serial.available());   // Espera hasta q haya datos
@@ -94,14 +98,17 @@ void loop()
             break;
 
         case VERIF_ERROR: 
-            actualizar_display = true;
             verif = velocidad.D[0] + velocidad.D[1] + cantidad.D[0] + cantidad.D[1];
             if (verif == 0xFF)
                 verif = 0xFE;
 
             if (verif != dato)
                 error_com = true;
+            else
+                error_com = false;
+
             estado = SYNC1;
+            actualizar_display = true;
             break;
 
         default:
@@ -113,16 +120,21 @@ void loop()
     if (actualizar_display)
     {
 
-        if (error_com)
+        // Actualizo solo en los cambios de info.. para evitar
+        // el flickering q se produce en el display
+
+        if (error_com && !error_anterior)
         {
             lcd.clear();
             lcd.setCursor(4, 0);
             lcd.print("Error de");
             lcd.setCursor(2, 1);
             lcd.print("comunicacion");
+
+            error_anterior = true;
         }
 
-        else
+        else if (!error_com && error_anterior)
         {
             lcd.clear();
             lcd.setCursor(0, 0);
@@ -132,7 +144,31 @@ void loop()
             lcd.setCursor(0, 1);
             lcd.print("Disparos: ");
             lcd.print(cantidad.val);
+
+            vel_anterior = velocidad.val;
+            cant_anterior = cantidad.val;
+            error_anterior = false;
         }
+        else if (!error_com)
+        {
+            if (velocidad.val != vel_anterior || cantidad.val != cant_anterior)
+            {
+                lcd.clear();
+                lcd.setCursor(0, 0);
+                lcd.print("Vel: ");
+                lcd.print(velocidad.val);
+                lcd.print(" m/s");
+                lcd.setCursor(0, 1);
+                lcd.print("Disparos: ");
+                lcd.print(cantidad.val);
+
+                vel_anterior = velocidad.val;
+                cant_anterior = cantidad.val;
+            }
+ 
+        }
+
+        actualizar_display = false;
     }
 
 }
