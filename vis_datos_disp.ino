@@ -78,22 +78,22 @@ void loop()
             break;
 
         case VEL0:
-            velocidad.D[0] = dato;
+            velocidad.D[1] = dato;
             estado = VEL1;
             break;
 
         case VEL1:
-            velocidad.D[1] = dato;
+            velocidad.D[0] = dato;
             estado = DISP0;
             break;
 
         case DISP0:
-            cantidad.D[0] = dato;
+            cantidad.D[1] = dato;
             estado = DISP1;
             break;
 
         case DISP1:
-            cantidad.D[1] = dato;
+            cantidad.D[0] = dato;
             estado = VERIF_ERROR;
             break;
 

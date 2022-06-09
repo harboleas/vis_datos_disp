@@ -14,7 +14,7 @@ public partial class MainWindow : Gtk.Window
         Build();
 
         //Conexion con arduino
-        port = new SerialPort("/dev/ttyUSB0", 115200);
+        port = new SerialPort("/dev/ttyACM0", 115200);
         port.Open();
 
     }
@@ -37,13 +37,13 @@ public partial class MainWindow : Gtk.Window
 
         // Velocidad 
         ushort Vel = ushort.Parse(vel.Text);
-        trama[2] = BitConverter.GetBytes(Vel)[0];
-        trama[3] = BitConverter.GetBytes(Vel)[1];
+        trama[2] = BitConverter.GetBytes(Vel)[1];
+        trama[3] = BitConverter.GetBytes(Vel)[0];
 
         // Disparos
         ushort Cant = ushort.Parse(cant.Text);
-        trama[4] = BitConverter.GetBytes(Cant)[0];
-        trama[5] = BitConverter.GetBytes(Cant)[1];
+        trama[4] = BitConverter.GetBytes(Cant)[1];
+        trama[5] = BitConverter.GetBytes(Cant)[0];
 
         // Verificacion de errores
         byte verif = (byte) (trama[2] + trama[3] + trama[4] + trama[5]);
